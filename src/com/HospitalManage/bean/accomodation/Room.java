@@ -1,37 +1,37 @@
 package com.HospitalManage.bean.accomodation;
 
-import com.HospitalManage.bean.patient.Gender;
-import com.HospitalManage.bean.patient.Patient;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 
-@Data
 public class Room {
-    private String position;
-    private Integer capacity;
-    private Gender gender;
-    private Boolean isolation;
-    private List<Patient> patients;
-    private Boolean[] beds;
 
-    public Room(String position, int capacity) {
-        this.position = position;
-        this.capacity = capacity;
-        this.isolation = false;
-        beds = new Boolean[capacity];
-        patients = new ArrayList<>();
+    private String roomNo;
+
+    private String gender;
+
+    private Boolean isolation;
+
+    private Integer occupied;
+
+    public Room(String roomNo) {
+        roomNo = roomNo;
+        occupied = 0;
     }
 
-    public boolean addPatient(Patient patient) {
+    /*    public boolean addPatient(Patient patient) {
         if (isolation ||
                 (gender!= null && patient.getGender() != gender) ||
                 patients.size() >= capacity ||
                 (patient.getIsolation() && patients.size() > 0)) {
             return false;
         }
-        patient.setRoomPosition(position);
         gender = patient.getGender();
         isolation = patient.getIsolation();
         patients.add(patient);
@@ -42,10 +42,10 @@ public class Room {
     private void assignToBed(Patient patient){
         for(int i=0;i<capacity;i++){
             if(!beds[i]) {
-                patient.setBedNumber(i);
+                patient.setBed(new Bed(position,i));
                 beds[i] = true;
             }
         }
-    }
+    }*/
 
 }

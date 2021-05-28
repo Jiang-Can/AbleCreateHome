@@ -1,33 +1,25 @@
 package com.HospitalManage.bean.patient;
 
-import com.HospitalManage.bean.misc.Prescription;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Patient {
-    private Long patientId;
+    private Integer patientId;
     private String name;
-    private Gender gender;
+    private String gender;
     private Boolean isolation;
-    private Prescription prescription;
-    private String roomPosition;
-    private int bedNumber;
+    private String bedNo;
 
-
-    public Patient(Long patientId, String name, Gender gender, Boolean isolation) {
-        this.patientId = patientId;
+    public Patient(String name, String gender, Boolean isolation, String bedNo) {
         this.name = name;
         this.gender = gender;
         this.isolation = isolation;
+        this.bedNo = bedNo;
     }
-
-    public Patient(Long patientId, String name, Gender gender, Boolean isolation, Prescription prescription) {
-        this.patientId = patientId;
-        this.name = name;
-        this.gender = gender;
-        this.isolation = isolation;
-        this.prescription = prescription;
-    }
-
 }

@@ -13,5 +13,11 @@ public interface StaffAction {
 
     void movePatientToDifferentBed(Staff staff,Patient patient,Room room,int bedNumber);
 
-    Patient checkPatientDetailsByBedNumber(Staff staff,Room room,int bedNumber);
+    Patient checkPatientDetailsByBedNumber(Room room,int bedNumber);
+
+    void addNewStaff(Staff staff);
+
+    void modifyStaff(Staff staff);
+
+    void addResidentToBed(Patient patient);
 }
