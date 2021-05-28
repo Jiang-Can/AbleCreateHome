@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="455.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar accessibleRole="BUTTON" prefHeight="29.0" prefWidth="451.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="manage patient">
+            <items>
+              <MenuItem fx:id="addNewPatient" mnemonicParsing="false" text="Add new patient (resident)" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="manage staff">
+            <items>
+              <MenuItem fx:id="addNewStaff" mnemonicParsing="false" text="Add new staff" />
+                  <MenuItem fx:id="updateStaff" mnemonicParsing="false" text="update staff" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="shift">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="83.0" layoutY="48.0" text="Ward1">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="14.0" layoutY="82.0" prefHeight="245.0" prefWidth="200.0" style="-fx-border-color: #000;" AnchorPane.bottomAnchor="128.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="237.0" AnchorPane.topAnchor="82.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <children>
+                  <Button fx:id="b1_1_1" layoutX="19.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" style="-fx-border-color: #000; -fx-background-color: #fff;" />
+               </children>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <children>
+                  <Button fx:id="b1_2_2" layoutX="51.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_2_1" layoutX="7.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="b1_3_1" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_3_2" layoutX="45.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_3_3" layoutX="7.0" layoutY="37.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_3_4" layoutX="45.0" layoutY="37.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="b1_4_1" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_4_2" layoutX="45.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_4_3" layoutX="7.0" layoutY="37.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_4_4" layoutX="45.0" layoutY="37.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="b1_5_1" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_5_2" layoutX="45.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_5_3" layoutX="7.0" layoutY="37.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_5_4" layoutX="45.0" layoutY="37.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="b1_6_1" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_6_2" layoutX="45.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_6_3" layoutX="7.0" layoutY="37.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b1_6_4" layoutX="45.0" layoutY="37.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Pane>
+         </children>
+      </GridPane>
+      <Label layoutX="300.0" layoutY="48.0" text="Ward2">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="231.0" layoutY="82.0" prefHeight="246.0" prefWidth="200.0" style="-fx-border-color: #000;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <children>
+                  <Button fx:id="b2_1_1" layoutX="19.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" style="-fx-border-color: #000; -fx-background-color: #fff;" />
+               </children>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <children>
+                  <Button fx:id="b2_2_2" layoutX="51.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_2_1" layoutX="7.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="b2_3_1" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_3_2" layoutX="45.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_3_3" layoutX="7.0" layoutY="37.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_3_4" layoutX="45.0" layoutY="37.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="b2_4_1" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_4_2" layoutX="45.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_4_3" layoutX="7.0" layoutY="37.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_4_4" layoutX="45.0" layoutY="37.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="b2_5_1" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_5_2" layoutX="45.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_5_3" layoutX="7.0" layoutY="37.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_5_4" layoutX="45.0" layoutY="37.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Pane>
+            <Pane prefHeight="80.0" prefWidth="62.0" style="-fx-border-color: #000;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="b2_6_1" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_6_2" layoutX="45.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_6_3" layoutX="7.0" layoutY="37.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+                  <Button fx:id="b2_6_4" layoutX="45.0" layoutY="37.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Pane>
+         </children>
+      </GridPane>
+      <Label layoutX="16.0" layoutY="344.0" text="BedNo you clicked:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Text fx:id="bedNoDisplay" layoutX="165.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Label layoutX="16.0" layoutY="382.0" text="Patient name in clicked bed:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Text fx:id="patientName" layoutX="231.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

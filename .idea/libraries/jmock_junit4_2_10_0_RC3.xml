@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jmock-junit4-2.10.0-RC3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jmock-junit4-2.10.0-RC3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
