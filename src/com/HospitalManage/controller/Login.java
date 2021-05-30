@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import static com.HospitalManage.controller.AlertController.errorAlert;
+
 
 public class Login extends Stage {
 
@@ -47,8 +49,10 @@ public class Login extends Stage {
                 close();
                 new MainPageController(staff).show();
 
+            }catch(NumberFormatException ne){
+                errorAlert("Staff id is only in integer format");
             }catch (Exception e) {
-                AlertController.errorAlert(e.getMessage());
+                errorAlert(e.getMessage());
                 e.printStackTrace();
             }
         });

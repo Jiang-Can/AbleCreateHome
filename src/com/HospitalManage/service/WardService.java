@@ -46,6 +46,9 @@ public class WardService {
         if(room.getIsolation()){
             throw new BedUnavailableException("This room has patient need to be isolation");
         }
+        if(patient.getIsolation()&&room.getOccupied()>0){
+            throw new BedUnavailableException("Patient who need to be isolated should live alone");
+        }
         if(room.getGender()!=null&&
                 !room.getGender().equals(patient.getGender())){
             throw new BedUnavailableException("This room is only available for "+room.getGender());

@@ -44,6 +44,9 @@ public class MainPageController extends Stage {
             b2_5_2,b2_5_3,b2_5_4,b2_6_1,b2_6_2,b2_6_3,b2_6_4;
 
     @FXML
+    private Button checkDetails;
+
+    @FXML
     private Text bedNoDisplay,patientName;
 
     @FXML
@@ -131,7 +134,6 @@ public class MainPageController extends Stage {
     }
     //End add new patient segment
 
-
     //Start add new staff segment
     private void setAddNewStaff(){
         addNewStaff.setOnAction(actionEvent -> {
@@ -156,5 +158,10 @@ public class MainPageController extends Stage {
                 e.printStackTrace();
             }
         });
+    }
+    //End update staff
+
+    public void setCheckDetails(){
+
     }
 }
