@@ -1,23 +1,36 @@
 package com.HospitalManage.bean.misc;
 
 import com.HospitalManage.bean.staff.Staff;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalTime;
-import java.util.Map;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Prescription {
 
-    private Long prescriptionId;
+    private Integer prescriptionId;
 
-    private Staff doctor;
+    private Integer doctorId;
 
-    /*
-    * String store the medicine name
-    * the Map<Double, LocalTime> store different doses at different time
-    * */
-    private Map<String,Map<Double, LocalTime>> medicinesDetails;
+    private Integer patientId;
+
+    private String medicine;
+
+    private Double doses;
+
+    private LocalTime time;
+
+    public Prescription(Integer doctorId, Integer patientId, String medicine, Double doses, LocalTime time) {
+        this.doctorId = doctorId;
+        this.patientId = patientId;
+        this.medicine = medicine;
+        this.doses = doses;
+        this.time = time;
+    }
 }

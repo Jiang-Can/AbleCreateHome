@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import static com.HospitalManage.controller.AlertController.errorAlert;
 
 
-public class Login extends Stage {
+public class LoginController extends Stage {
 
     @FXML
     private TextField staffNumber;
@@ -24,7 +24,7 @@ public class Login extends Stage {
     private StaffService staffService;
 
 
-    public Login() throws Exception {
+    public LoginController() throws Exception {
         initialisation();
     }
 

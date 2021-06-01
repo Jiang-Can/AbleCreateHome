@@ -13,6 +13,21 @@ public class PatientModel extends BaseModel{
     }
     public int addNewPatient(Patient patient){
         String sql = "insert into patient (name, gender, isolation, bed_no) values (?,?,?,?)";
-        return update(sql,patient.getName(),patient.getGender(),patient.getIsolation(),patient.getBedNo());
+        update(sql,patient.getName(),patient.getGender(),patient.getIsolation(),patient.getBedNo());
+        return getNewPatientId();
+    }
+    public int getNewPatientId(){
+        String sql = "select max(patient_id) from patient";
+        return (int)queryForSingleValue(sql);
+    }
+
+    public int deletePatientByBedNo(String bedNo){
+        String sql = "delete from patient where bed_no=?";
+        return update(sql,bedNo);
+    }
+
+    public int changePatientBedNo(String originBedNo,String targetBedNo){
+        String sql = "update patient set bed_no=? where bed_no=?";
+        return update(sql,targetBedNo,originBedNo);
     }
 }

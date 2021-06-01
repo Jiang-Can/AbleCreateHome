@@ -1,9 +1,6 @@
 package com.HospitalManage;
 
-import com.HospitalManage.controller.Login;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import com.HospitalManage.controller.LoginController;
 import javafx.stage.Stage;
 
 public class HospitalApp extends javafx.application.Application {
@@ -18,7 +15,7 @@ public class HospitalApp extends javafx.application.Application {
         stage.setTitle("login");
         stage.setScene(new Scene(parent));
         stage.show();*/
-        new Login().show();
+        new LoginController().show();
     }
 
 

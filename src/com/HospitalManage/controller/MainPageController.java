@@ -1,6 +1,7 @@
 package com.HospitalManage.controller;
 
 import com.HospitalManage.bean.patient.Patient;
+import com.HospitalManage.bean.staff.Job;
 import com.HospitalManage.bean.staff.Staff;
 import com.HospitalManage.service.StaffService;
 import com.HospitalManage.service.WardService;
@@ -44,7 +45,7 @@ public class MainPageController extends Stage {
             b2_5_2,b2_5_3,b2_5_4,b2_6_1,b2_6_2,b2_6_3,b2_6_4;
 
     @FXML
-    private Button checkDetails;
+    private Button checkDetails,patientLeave;
 
     @FXML
     private Text bedNoDisplay,patientName;
@@ -71,6 +72,8 @@ public class MainPageController extends Stage {
         setAddNewPatient();
         setAddNewStaff();
         setUpdateStaff();
+        setPatientLeave();
+        setCheckDetails();
         renderBedsColor();
 
     }
@@ -84,7 +87,7 @@ public class MainPageController extends Stage {
                 if(show!=null){
                     patientName.setText(show.getName());
                 }else{
-                    patientName.setText("No patient in this bed");
+                    patientName.setText("EMPTY");
                 }
             });
             bedMap.put(bed.getId().substring(1),bed);
@@ -109,11 +112,11 @@ public class MainPageController extends Stage {
     private void setAddNewPatient(){
         addNewPatient.setOnAction(actionEvent -> {
             try {
-                managerValidation(loginStaff.getJob());
+                jobValidation(loginStaff.getJob(), Job.MANAGER);
                 new AddNewPatientController(wardService,this).showAndWait();
                 if(newPatient !=null){
                     System.out.println(newPatient.getName());
-                    renderSingleBed(newPatient);
+                    renderSingleBed(newPatient.getBedNo(),newPatient.getGender());
                     newPatient = null;
                 }
 
@@ -124,9 +127,13 @@ public class MainPageController extends Stage {
         });
     }
 
-    private void renderSingleBed(Patient patient){
-        bedMap.get(patient.getBedNo())
-                .setStyle("MALE".equals(patient.getGender())?blue:red);
+    public void renderSingleBed(String bedNo,String gender){
+        bedMap.get(bedNo)
+                .setStyle("MALE".equals(gender)?blue:red);
+    }
+
+    public void resetTheColor(String bedNo){
+        bedMap.get(bedNo).setStyle(defaultColor);
     }
 
     public void setNewPatient(Patient newPatient){
@@ -134,11 +141,10 @@ public class MainPageController extends Stage {
     }
     //End add new patient segment
 
-    //Start add new staff segment
     private void setAddNewStaff(){
         addNewStaff.setOnAction(actionEvent -> {
             try {
-                managerValidation(loginStaff.getJob());
+                jobValidation(loginStaff.getJob(), Job.MANAGER);
                 new AddNewStaffController(staffService).show();
             } catch (Exception e) {
                 errorAlert(e.getMessage());
@@ -146,22 +152,59 @@ public class MainPageController extends Stage {
             }
         });
     }
-    //End add new staff segment
 
-    //Start update staff
     private void setUpdateStaff(){
         updateStaff.setOnAction(actionEvent -> {
             try {
-                managerValidation(loginStaff.getJob());
+                jobValidation(loginStaff.getJob(), Job.MANAGER);
                 new UpdateStaffController(staffService).show();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
     }
-    //End update staff
 
     public void setCheckDetails(){
+        checkDetails.setOnAction(actionEvent -> {
+            try{
+                jobValidation(loginStaff.getJob(), Job.DOCTOR,Job.NURSE);
+                hasSelectedPatientValidation();
+                new PatientDetailsController(
+                        this,
+                        bedNoDisplay.getText(),
+                        loginStaff).showAndWait();
+            }catch (Exception e){
+                errorAlert(e.getMessage());
+                e.printStackTrace();
+            }
+        });
+    }
 
+    public void setPatientLeave(){
+        patientLeave.setOnAction(actionEvent -> {
+            try {
+                hasSelectedPatientValidation();
+                jobValidation(loginStaff.getJob(),Job.MANAGER);
+                wardService.moveOutPatientFromHospital(
+                        wardService.getPatientMap()
+                        .get(bedNoDisplay.getText()));
+                resetTheColor(bedNoDisplay.getText());
+
+            } catch (Exception e) {
+                errorAlert(e.getMessage());
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void hasSelectedPatientValidation() throws Exception {
+        if("EMPTY".equals(patientName.getText())||"".equals(patientName.getText())){
+            throw new Exception("Please select a patient first");
+        }
+
+    }
+
+    public WardService getWardService(){
+        return wardService;
     }
 }

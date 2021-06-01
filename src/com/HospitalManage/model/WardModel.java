@@ -32,6 +32,10 @@ public class WardModel extends BaseModel{
         return update(sql,roomNo);
     }
 
+    public int setRoomToDefaultStatus(Room room){
+        String sql = "update room set gender=?,isolation=?,occupied=? where room_no=?";
+        return update(sql,room.getGender(),room.getIsolation(),room.getOccupied(),room.getRoomNo());
+    }
 
     //Dao operation for Bed
 
